@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Secretaria',
+    'title' => 'Reservas',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Secretaria</b>',
+    'logo' => '<b>Reservas</b>',
     'logo_img' => 'images/logosistema.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,

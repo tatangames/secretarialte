@@ -116,7 +116,7 @@
                         <img src="{{ asset('images/logo.png') }}" class="login-logo" alt="Santa Ana Norte">
 
                         <!-- TÍTULO  -->
-                        <h4 class="login-title">SECRETARIA MUNICIPAL</h4>
+                        <h4 class="login-title">RESERVAS</h4>
                         <form class="login-form">
                             <div>
                                 <label class="font-500">Usuario</label>
