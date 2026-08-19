@@ -83,54 +83,19 @@
         <div class="container-fluid">
             <div class="row">
 
-                {{-- ══ INVENTARIO ACTUAL ══ --}}
-                <div class="col-md-4">
-                    <div class="reporte-card">
-                        <div class="reporte-header" style="background: linear-gradient(135deg, #1a4a6b, #1a73e8);">
-                            <i class="fas fa-boxes"></i>
-                            <h5>Inventario Actual de Materiales</h5>
-                        </div>
-                        <div class="reporte-body">
-                            <p style="font-size:13px; color:#666; margin-bottom:14px;">
-                                Existencias actuales (entradas menos salidas). Solo muestra materiales con cantidad mayor a cero.
-                            </p>
-                            <hr class="divider">
 
-                            <div class="row">
-                                <div class="col-md-6 d-flex">
-                                    <button type="button" onclick="generarPdfInventario()" class="btn-pdf"
-                                            style="background: linear-gradient(135deg, #1a4a6b, #1a73e8); color:#fff;
-                               box-shadow: 0 4px 14px rgba(26,115,232,.35); margin-top:0;">
-                                        <i class="fas fa-file-pdf"></i> Generar PDF
-                                    </button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                {{-- ══ ENTRADAS / SALIDAS POR PERÍODO ══ --}}
                 <div class="col-md-4">
                     <div class="reporte-card">
                         <div class="reporte-header" style="background: linear-gradient(135deg, #6b4a1a, #e88e1a);">
                             <i class="fas fa-exchange-alt"></i>
-                            <h5>Control de Entradas/Salidas por Período</h5>
+                            <h5>Reporte Por Fecha</h5>
                         </div>
                         <div class="reporte-body">
-                            <p style="font-size:13px; color:#666; margin-bottom:14px;">
-                                Muestra saldo inicial, entradas, salidas y saldo final de cada material dentro del rango de fechas seleccionado.
-                            </p>
-                            <hr class="divider">
 
                             <div class="fecha-row">
                                 <div class="fecha-box">
-                                    <label>Fecha desde <span class="text-danger">*</span></label>
-                                    <input type="date" id="periodo-fecha-desde" class="form-control form-control-sm">
-                                </div>
-                                <div class="fecha-box">
-                                    <label>Fecha hasta <span class="text-danger">*</span></label>
-                                    <input type="date" id="periodo-fecha-hasta" class="form-control form-control-sm">
+                                    <label>Fecha <span class="text-danger">*</span></label>
+                                    <input type="date" id="periodo-fecha" class="form-control form-control-sm">
                                 </div>
                             </div>
 
@@ -164,19 +129,13 @@
         // ── Reporte de Entradas/Salidas por Período ────────────────────
         function generarPdfPeriodo() {
             var desde = document.getElementById('periodo-fecha-desde').value;
-            var hasta = document.getElementById('periodo-fecha-hasta').value;
 
-            if (!desde || !hasta) {
-                toastr.error('Debes seleccionar fecha desde y fecha hasta');
+            if (!desde) {
+                toastr.error('Fecha es requerida');
                 return;
             }
 
-            if (desde > hasta) {
-                toastr.error('La fecha "desde" no puede ser mayor que "hasta"');
-                return;
-            }
-
-            var url = "{{ url('admin/bodega/reportespdf/inicial/final') }}/" + desde + '/' + hasta;
+            var url = "{{ url('admin/reportes/reserva/pdf') }}/" + desde;
             window.open(url, '_blank');
         }
 

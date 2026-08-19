@@ -28,9 +28,15 @@ class ReportesController extends Controller
     public function indexReportes()
     {
 
-        return view('backend.admin.reportes.')
+        return view('backend.admin.reportes.vistareportegenerales');
     }
 
+
+
+    public function reportePdfPorFecha()
+    {
+        return "dfff";
+    }
 
 
 

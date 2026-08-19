@@ -75,8 +75,8 @@ Route::middleware('auth:admin')->group(function () {
     Route::post('/admin/calendario/nuevo', [CalendarioController::class, 'nuevo']);
 
     // --- REPORTES ---
-    Route::get('/admin/lugares/index', [ReportesController::class,'indexReportes'])->name('admin.reportes.index');
-
+    Route::get('/admin/reportes/index', [ReportesController::class,'indexReportes'])->name('admin.reportes.index');
+    Route::get('/admin/reportes/reserva/pdf', [ReportesController::class,'reportePdfPorFecha']);
 
 
 
