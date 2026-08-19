@@ -9,10 +9,10 @@ use App\Http\Controllers\Sistema\PerfilController;
 use App\Http\Controllers\Sistema\PermisoController;
 use App\Http\Controllers\Sistema\ConfiguracionController;
 use App\Http\Controllers\Sistema\CalendarioController;
-
-
-
 use App\Http\Controllers\Sistema\ReportesController;
+
+
+
 
 
 Route::get('/', [LoginController::class,'vistaLoginForm'])->name('login.admin');
@@ -74,7 +74,8 @@ Route::middleware('auth:admin')->group(function () {
     Route::post('/admin/calendario/eliminar',          [CalendarioController::class, 'eliminar']);
     Route::post('/admin/calendario/nuevo', [CalendarioController::class, 'nuevo']);
 
-
+    // --- REPORTES ---
+    Route::get('/admin/lugares/index', [ReportesController::class,'indexReportes'])->name('admin.reportes.index');
 
 
 

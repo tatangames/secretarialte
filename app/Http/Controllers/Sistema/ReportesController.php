@@ -25,6 +25,11 @@ use Illuminate\Support\Facades\Validator;
 class ReportesController extends Controller
 {
 
+    public function indexReportes()
+    {
+
+        return view('backend.admin.reportes.')
+    }
 
 
 

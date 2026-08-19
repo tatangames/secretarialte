@@ -330,6 +330,12 @@ return [
             'route' => 'admin.calendario.index',
         ],
 
+        [
+            'text' => 'Reportes',
+            'icon' => 'far fa-circle',
+            'route' => 'admin.reportes.index',
+        ],
+
 
         [
             'text'    => 'Configuración',
