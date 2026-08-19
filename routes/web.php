@@ -76,9 +76,7 @@ Route::middleware('auth:admin')->group(function () {
 
     // --- REPORTES ---
     Route::get('/admin/reportes/index', [ReportesController::class,'indexReportes'])->name('admin.reportes.index');
-    Route::get('/admin/reportes/reserva/pdf', [ReportesController::class,'reportePdfPorFecha']);
-
-
+    Route::get('/admin/reportes/reserva/pdf', [ReportesController::class, 'reportePdfPorFecha']);
 
 
 

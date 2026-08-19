@@ -92,12 +92,21 @@
                         </div>
                         <div class="reporte-body">
 
-                            <div class="fecha-row">
+                            <div class="fecha-row col-md-7">
                                 <div class="fecha-box">
                                     <label>Fecha <span class="text-danger">*</span></label>
-                                    <input type="date" id="periodo-fecha" class="form-control form-control-sm">
+                                    <input type="date" id="periodo-fecha-desde" class="form-control form-control-sm">
                                 </div>
                             </div>
+
+                            <select id="periodo-lugar" class="form-control form-control-sm select2-lugar-reporte">
+                                <option value="">Todos</option>
+                                @foreach(\App\Models\Lugar::orderBy('nombre')->get() as $lugar)
+                                    <option value="{{ $lugar->id }}">{{ $lugar->nombre }}</option>
+                                @endforeach
+                            </select>
+
+                            <br>
 
                             <button type="button" onclick="generarPdfPeriodo()" class="btn-pdf"
                                     style="background: linear-gradient(135deg, #6b4a1a, #e88e1a); color:#fff;
@@ -126,16 +135,25 @@
             window.open("{{ url('admin/reporte/pdf/inventario') }}/", '_blank');
         }
 
-        // ── Reporte de Entradas/Salidas por Período ────────────────────
+        $(document).ready(function () {
+            $('.select2-lugar-reporte').select2({
+                theme: 'bootstrap-5',
+                minimumResultsForSearch: 0
+            });
+        });
+
         function generarPdfPeriodo() {
             var desde = document.getElementById('periodo-fecha-desde').value;
+            var lugar = $('#periodo-lugar').val();
 
             if (!desde) {
                 toastr.error('Fecha es requerida');
                 return;
             }
 
-            var url = "{{ url('admin/reportes/reserva/pdf') }}/" + desde;
+            var url = "{{ url('admin/reportes/reserva/pdf') }}?fecha=" + desde;
+            if (lugar) url += '&id_lugar=' + lugar;
+
             window.open(url, '_blank');
         }
 
