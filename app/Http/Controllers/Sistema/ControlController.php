@@ -17,7 +17,7 @@ class ControlController extends Controller
         }
         // Inventario
         else  if($user->hasRole('inventario')){
-            return redirect()->route('admin.lugares.index');
+            return redirect()->route('admin.calendario.index');
         }
 
         return redirect()->route('no.permisos.index');
