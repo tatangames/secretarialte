@@ -4,7 +4,7 @@
 @include('backend.urlglobal')
 
 <head>
-    <title>Bodega Informatica</title>
+    <title>Secretaria</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('css/login/bootstrap.min.css') }}">
@@ -115,9 +115,8 @@
                         <!-- LOGO + TEXTO COMO EN LA CAPTURA -->
                         <img src="{{ asset('images/logo.png') }}" class="login-logo" alt="Santa Ana Norte">
 
-
                         <!-- TÍTULO  -->
-                        <h4 class="login-title">TECNOLOGIAS DE LA INFORMACION</h4>
+                        <h4 class="login-title">SECRETARIA MUNICIPAL</h4>
                         <form class="login-form">
                             <div>
                                 <label class="font-500">Usuario</label>
@@ -133,8 +132,6 @@
                                        style="margin-top: 20px"
                                        onclick="login()"
                                        class="btn btn-primary btn-lg w-100 shadow-lg">
-
-
 
                             </div>
                         </form>

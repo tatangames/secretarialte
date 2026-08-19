@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Bodega Informatica',
+    'title' => 'Secretaria',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Bodega Informatica</b>',
+    'logo' => '<b>Secretaria</b>',
     'logo_img' => 'images/logosistema.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -323,69 +323,13 @@ return [
                 ],
             ],
         ],
-        [
-            'text'    => 'Inventario',
-            'icon'    => 'fas fa-pen-alt',
-            'can'     => 'sidebar.inventario',
-            'submenu' => [
-                [
-                    'text' => 'Unidad de Medida',
-                    'icon' => 'far fa-circle',
-                    'route' => 'admin.unidadmedida.index',
-                ],
-                [
-                    'text' => 'Catálogo de Materiales',
-                    'icon' => 'far fa-circle',
-                    'route' => 'admin.materiales.index',
-                ],
-
-            ],
-        ],
 
         [
-            'text'    => 'Entradas y Salidas',
-            'icon'    => 'fas fa-pen-alt',
-            'can'     => 'sidebar.inventario',
-            'submenu' => [
-                [
-                    'text' => 'Registro de Entradas',
-                    'icon' => 'far fa-circle',
-                    'route' => 'admin.entrada.registro.index',
-                ],
-                [
-                    'text' => 'Registro de Salidas',
-                    'icon' => 'far fa-circle',
-                    'route' => 'admin.salida.registro.index',
-                ],
-                [
-                    'text' => 'Pendientes',
-                    'icon' => 'far fa-circle',
-                    'route' => 'admin.pendientes.index',
-                ],
-
-            ],
+            'text' => 'Calendario',
+            'icon' => 'far fa-circle',
+            'route' => 'admin.calendario.index',
         ],
 
-
-
-        [
-            'text'    => 'Historial',
-            'icon'    => 'fas fa-pen-alt',
-            'can'     => 'sidebar.inventario',
-            'submenu' => [
-                [
-                    'text' => 'Entradas',
-                    'icon' => 'far fa-circle',
-                    'route' => 'admin.historial.entradas.index',
-                ],
-                [
-                    'text' => 'Salidas',
-                    'icon' => 'far fa-circle',
-                    'route' => 'admin.historial.salidas.index',
-                ],
-
-            ],
-        ],
 
         [
             'text'    => 'Configuración',
@@ -393,52 +337,16 @@ return [
             'can'     => 'sidebar.inventario',
             'submenu' => [
                 [
-                    'text' => 'Rubros',
+                    'text' => 'Lugares',
                     'icon' => 'far fa-circle',
-                    'route' => 'admin.rubro.index',
-                ],
-                [
-                    'text' => 'Cuentas',
-                    'icon' => 'far fa-circle',
-                    'route' => 'admin.cuenta.index',
-                ],
-                [
-                    'text' => 'Objeto Específico',
-                    'icon' => 'far fa-circle',
-                    'route' => 'admin.objetoespecifico.index',
+                    'route' => 'admin.lugares.index',
                 ],
 
-                [
-                    'text' => 'Tipo de Compra',
-                    'icon' => 'far fa-circle',
-                    'route' => 'admin.tipodecompra.index',
-                ],
-
-                [
-                    'text' => 'Proveedores',
-                    'icon' => 'far fa-circle',
-                    'route' => 'admin.proveedor.index',
-                ],
 
             ],
         ],
 
 
-        [
-            'text'    => 'Reportes',
-            'icon'    => 'fas fa-pen-alt',
-            'can'     => 'sidebar.reportes',
-            'submenu' => [
-                [
-                    'text' => 'Generales',
-                    'icon' => 'far fa-circle',
-                    'route' => 'admin.reporte.generales.index',
-                ],
-
-
-
-            ],
-        ],
 
 
 

@@ -17,11 +17,7 @@ class ControlController extends Controller
         }
         // Inventario
         else  if($user->hasRole('inventario')){
-            return redirect()->route('admin.materiales.index');
-        }
-        // Reportes
-        else  if($user->hasRole('reportes')){
-            return redirect()->route('admin.reporte.generales.index');
+            return redirect()->route('admin.lugares.index');
         }
 
         return redirect()->route('no.permisos.index');

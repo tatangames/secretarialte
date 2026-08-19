@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Tipo de Compra')
+@section('title', 'Lugares')
 
 @section('content_header')
-    <h1>Tipo de Compra</h1>
+    <h1>Lugares</h1>
 @stop
 
 
@@ -162,7 +162,7 @@
 
         <script>
             $(function () {
-                const ruta = "{{ url('/admin/tipodecompra/tabla/index') }}";
+                const ruta = "{{ url('/admin/lugares/tabla/index') }}";
 
                 function initDataTable() {
                     // Si ya hay instancia, destrúyela antes de re-crear
@@ -224,7 +224,7 @@
     <script>
 
         function recargar(){
-            var ruta = "{{ url('/admin/tipodecompra/tabla/index') }}";
+            var ruta = "{{ url('/admin/lugares/tabla/index') }}";
             $('#tablaDatatable').load(ruta);
         }
 
@@ -245,7 +245,7 @@
             var formData = new FormData();
             formData.append('nombre', nombre);
 
-            axios.post(urlAdmin+'/admin/tipodecompra/nuevo', formData, {
+            axios.post(urlAdmin+'/admin/lugares/nuevo', formData, {
             })
                 .then((response) => {
                     closeLoading();
@@ -268,7 +268,7 @@
             openLoading();
             document.getElementById("formulario-editar").reset();
 
-            axios.post(urlAdmin+'/admin/tipodecompra/informacion',{
+            axios.post(urlAdmin+'/admin/lugares/informacion',{
                 'id': id
             })
                 .then((response) => {
@@ -302,7 +302,7 @@
             formData.append('id', id);
             formData.append('nombre', nombre);
 
-            axios.post(urlAdmin+'/admin/tipodecompra/editar', formData, {
+            axios.post(urlAdmin+'/admin/lugares/editar', formData, {
             })
                 .then((response) => {
                     closeLoading();
